@@ -20,10 +20,19 @@ Building the example
 * make
 
 
-Usage
+Usage Widget Application
 -----
+	#include <QVBoxLayout>
 	...
+
+	QVBoxLayout *m_layout = new QVBoxLayout;
 	QHexView *qHexView = new QHexView;
+
 	...
+
 	qHexView->loadFile("to/path/file");
+
 	...
+
+	m_layout->addWidget(m_hexview);
+	m_ui->widgetHex->setLayout(m_layout);
