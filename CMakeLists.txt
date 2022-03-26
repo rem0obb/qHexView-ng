@@ -31,8 +31,9 @@ endif()
 set(PROJECT_SOURCES
 
         example/main.cpp
-        example/MainWindow.cpp
-        example/MainWindow.h
+        example/mainwindow.cpp
+        example/mainwindow.hpp
+		example/mainwindow.ui
 
         ../src/QHexView-ng.cpp
         ../src/include/QHexView-ng.hpp

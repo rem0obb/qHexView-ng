@@ -1,13 +1,12 @@
+#include "mainwindow.hpp"
 #include <QApplication>
 
-#include "MainWindow.h"
-
-int main(int argc, char **argv)
+int main(int p_argc, char *p_argv[])
 {
-	QApplication app(argc, argv);
+    QApplication::setSetuidAllowed(true);
+    QApplication a(p_argc, p_argv);
+    MainWindow w;
+    w.show();
 
-	MainWindow wgt;
-	wgt.show();
-
-	return app.exec();
+    return a.exec();
 }
