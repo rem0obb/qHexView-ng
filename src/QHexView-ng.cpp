@@ -89,6 +89,7 @@ void QHexView::showFromOffset(int offset)
 void QHexView::clear()
 {
     verticalScrollBar()->setValue(0);
+    m_pdata.clear();
     UPDATE;
 }
 
