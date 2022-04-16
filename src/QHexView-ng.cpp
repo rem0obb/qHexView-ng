@@ -96,15 +96,9 @@ void QHexView::showFromOffset ( int offset )
 // clean all
 void QHexView::clear()
 {
-<<<<<<< HEAD
   verticalScrollBar()->setValue ( 0 );
   m_pdata.clear();
   UPDATE;
-=======
-    verticalScrollBar()->setValue(0);
-    m_pdata.clear();
-    UPDATE;
->>>>>>> 8cbdd5aec743649b185bfcbf044b618e0c185df9
 }
 
 QSize QHexView::fullSize() const
