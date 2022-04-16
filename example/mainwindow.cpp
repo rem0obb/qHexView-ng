@@ -80,3 +80,8 @@ void MainWindow::on_pushButton_clicked()
    on_actionOpen_triggered();
 }
 
+void MainWindow::on_actionClean_triggered()
+{
+    m_hexview->clear();
+}
+

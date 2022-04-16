@@ -6,32 +6,30 @@
 
 namespace Ui
 {
-    class MainWindow;
+class MainWindow;
 };
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+  Q_OBJECT
 
-public:
-    explicit MainWindow(QWidget * = nullptr);
-    ~MainWindow();
+ public:
+  explicit MainWindow ( QWidget * = nullptr );
+  ~MainWindow();
 
-private slots:
-    void on_actionOpen_triggered();
+ private slots:
+  void on_actionOpen_triggered();
+  void on_actionGo_to_Offset_triggered();
+  void on_actionAbout_triggered();
+  void on_pushButton_clicked();
+  void on_actionClean_triggered();
 
-    void on_actionGo_to_Offset_triggered();
+ private:
+  Ui::MainWindow *m_ui;
+  QHexView *m_hexview;
+  QVBoxLayout *m_layout;
+  QString m_fileName;
 
-    void on_actionAbout_triggered();
-
-    void on_pushButton_clicked();
-
-private:
-	Ui::MainWindow *m_ui;
-	QHexView* m_hexview;
-	QVBoxLayout* m_layout;
-	QString m_fileName;
-
-	void confWidget();
-	void loadFile();
+  void confWidget();
+  void loadFile();
 };
