@@ -595,3 +595,8 @@ void QHexView::confScrollBar()
   verticalScrollBar()->setPageStep(areaSize.height() / m_charHeight);
   verticalScrollBar()->setRange(0, (widgetSize.height() - areaSize.height()) / m_charHeight + 1);
 }
+
+std::size_t QHexView::sizeFile()
+{
+  return m_pdata.size();
+}

@@ -11,6 +11,12 @@ MainWindow::MainWindow ( QWidget *p_parent ) : QMainWindow ( p_parent ),
 {
   m_ui->setupUi ( this );
   confWidget();
+
+#if _WIN64 || _WIN32
+  setWindowIcon(QIcon("..\\..\\example\\hex_icon.png"));
+#else
+  setWindowIcon(QIcon("../example/hex_icon.png"));
+#endif
 }
 
 MainWindow::~MainWindow()
@@ -47,7 +53,7 @@ void MainWindow::loadFile()
   try
   {
     m_hexview->loadFile ( m_fileName );
-
+    m_ui->Totalsize_label->setText("Total " + QString::number(m_hexview->sizeFile()) +" Bytes");
   }
   catch ( std::exception &e )
   {
@@ -85,14 +91,10 @@ void MainWindow::on_actionAbout_triggered()
   QMessageBox::about ( this, "About", message );
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-  on_actionOpen_triggered();
-}
-
 void MainWindow::on_actionClean_triggered()
 {
   setWindowTitle("QHexView-ng");
   m_hexview->clear();
+  m_ui->Totalsize_label->setText("Total 0 Bytes");
 }
 

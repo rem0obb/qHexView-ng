@@ -9,7 +9,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(DEBUGGER OFF)
-set(NO_FLAG ON)
+set(NO_FLAG OFF)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -33,7 +33,7 @@ set(PROJECT_SOURCES
         example/main.cpp
         example/mainwindow.cpp
         example/mainwindow.hpp
-		example/mainwindow.ui
+        example/mainwindow.ui
 
         ../src/QHexView-ng.cpp
         ../src/include/QHexView-ng.hpp
@@ -44,7 +44,7 @@ add_executable(HexView
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(HexView
+    qt_add_executable(QHexView-ng
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
@@ -60,5 +60,5 @@ set_target_properties(HexView PROPERTIES
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(HexView)
+    qt_finalize_executable(QHexView-ng)
 endif()

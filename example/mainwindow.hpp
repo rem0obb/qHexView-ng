@@ -21,7 +21,6 @@ class MainWindow : public QMainWindow
   void on_actionOpen_triggered();
   void on_actionGo_to_Offset_triggered();
   void on_actionAbout_triggered();
-  void on_pushButton_clicked();
   void on_actionClean_triggered();
 
  private:
