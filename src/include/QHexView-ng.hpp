@@ -56,7 +56,7 @@ class QHexView: public QAbstractScrollArea
  private:
   QByteArray  m_pdata;
 
-  int m_posAddr,
+  unsigned int m_posAddr,
       m_posHex,
       m_posAscii,
       m_charWidth,
@@ -75,11 +75,12 @@ class QHexView: public QAbstractScrollArea
   void ensureVisible();
   void setCursorPos ( int pos );
   int  cursorPos ( const QPoint &position );
+  int  getCursorPos();
+  void paintMark(int xpos, int ypos);
   void confScrollBar();
-  QByteArray getData ( int position, int length );
 
  public slots:
-  int loadFile ( QString p_file );
+  void loadFile ( QString p_file );
   void clear();
   void showFromOffset ( int offset );
   void setSelected ( int offset, int length );
